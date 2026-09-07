@@ -1,0 +1,16 @@
+# Build output
+bin/
+obj/
+build/
+dist/
+
+# Local extracted client data
+research/extracted/
+
+# Reverse-engineering workspace files
+*.dmp
+*.log
+
+# Secrets
+.env
+.env.*

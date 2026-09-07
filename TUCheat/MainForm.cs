@@ -9,7 +9,7 @@ public sealed class MainForm : Form
     private readonly Label status;
     private readonly RichTextBox log;
     private readonly NumericUpDown interval;
-    private readonly Timer timer;
+    private readonly System.Windows.Forms.Timer timer;
 
     public MainForm()
     {
@@ -39,7 +39,7 @@ public sealed class MainForm : Form
         var activity = new Label { Text = "Activity", AutoSize = true, Location = new Point(395, 185) };
         Controls.AddRange(new Control[] { title, subtitle, status, start, stop, group, activity, log });
 
-        timer = new Timer { Interval = 1000 };
+        timer = new System.Windows.Forms.Timer { Interval = 1000 };
         timer.Tick += (_, _) => WriteLog("Simulation tick");
         interval.ValueChanged += (_, _) => timer.Interval = (int)interval.Value;
         FormClosing += (_, _) => timer.Stop();
